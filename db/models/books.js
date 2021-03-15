@@ -20,6 +20,10 @@ module.exports = (sequelize) => {
             type: Sequelize.STRING(200),
             allowNull: false,
         },
+        language: {
+            type: Sequelize.STRING(100),
+            allowNull: false,
+        }
     }, {sequelize});
 
     return Book;

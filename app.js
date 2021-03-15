@@ -10,6 +10,8 @@ const mainRoutes = require('./routes');
 const db = require('./db');
 const { Book } = db.models;
 
+application.set('view engine', 'pug');
+
 //This is a method giving `app.js` to the routes written in the `routes` directory.
 application.use(mainRoutes);
 
@@ -34,19 +36,47 @@ application.listen(3000, () => {
                 title: 'Towards Sacred Activism',
                 author: 'Imam Dawud Walid',
                 genre: 'Political Essay',
+                language: 'English',
             }),
             Book.create({
                 title: 'Being Muslim: A Practical Guide',
                 author: 'Asad Tarsin',
                 genre: 'Reference',
+                language: 'English',
+            }),
+            Book.create({
+                title: 'Ser Musulmana: Una Guia Practica',
+                author: 'Asad Tarsin',
+                genre: 'Reference',
+                language: 'Spanish',
+            }),
+            Book.create({
+                title: "Al-Maqasid: Nawawi's Manual of Islam",
+                author: 'Nuh Ha Mim Keller',
+                genre: 'Fiqh',
+                language: 'English',
+            }),
+            Book.create({
+                title: "A Treasury of Sacred Maxims",
+                author: 'Shahrul Hussain',
+                genre: 'Legal Essay',
+                language: 'English',
+            }),
+            Book.create({
+                title: "Ahmadu Bamba: Sage of Senegal",
+                author: "Rukayat Yakub",
+                genre: 'Picture Book',
+                language: 'English'
             })
-        ])
+        ]);
         
-        /* await Book.create({
-            title: 'Towards Sacred Activism',
-            author: 'Imam Dawud Walid',
-            genre: 'Political Essay',
+        /* This is a single book entry CREATE'd & stored in the database.
+            await Book.create({
+                title: 'Towards Sacred Activism',
+                author: 'Imam Dawud Walid',
+                genre: 'Political Essay',
         }); */
+
     } catch (error) {
         console.error('Unfortunately, the airlock is not air tight and our connection to the database has failed', error);
     }
