@@ -27,12 +27,26 @@ application.listen(3000, () => {
         //This tests that the app is connecting to the SQLite3 database.
         await db.sequelize.authenticate();
         console.log('Airlock to Database is secure. . .100%');
-        //This is creating and storing a book entry into the database.
-        await Book.create({
+        //This is creating and storing a few book entries into the database.
+        
+        await Promise.all([
+            Book.create({
+                title: 'Towards Sacred Activism',
+                author: 'Imam Dawud Walid',
+                genre: 'Political Essay',
+            }),
+            Book.create({
+                title: 'Being Muslim: A Practical Guide',
+                author: 'Asad Tarsin',
+                genre: 'Reference',
+            })
+        ])
+        
+        /* await Book.create({
             title: 'Towards Sacred Activism',
             author: 'Imam Dawud Walid',
             genre: 'Political Essay',
-        });
+        }); */
     } catch (error) {
         console.error('Unfortunately, the airlock is not air tight and our connection to the database has failed', error);
     }
