@@ -10,10 +10,12 @@ const mainRoutes = require('./routes');
 const db = require('./db');
 const { Book } = db.models;
 
+// This allows for HTML template rendering using the Pug rendering engine.
 application.set('view engine', 'pug');
 
 //This is a method giving `app.js` to the routes written in the `routes` directory.
 application.use(mainRoutes);
+application.use('/static', express.static('public'));
 
 //This method is using Port 3000 to listen to various HTTP requests.
 application.listen(3000, () => {
