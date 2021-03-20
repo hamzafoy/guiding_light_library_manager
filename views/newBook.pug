@@ -5,11 +5,7 @@ html(lang="en")
     link(rel='stylesheet', href='/static/stylesheets/style.css')
   body
     h1 Guiding Light Islamic Center Library
-    h2 Our Book Selection
-    
-    each book in bookList
-      book
-        h3= book.title
+    h2 Submit a new book to our Library! 
 
-    p This library is open to all in our local Louisville Muslim community!
-    a(href="/new") Add New Book
+  form(action="/", method="post")
+    include form

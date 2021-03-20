@@ -6,6 +6,8 @@ const router = express.Router();
 const db = require('../db');
 const { Book } = db.models;
 
+const bodyParser = require('body-parser')
+
 function asyncHandler(cb){
     return async(req, res, next) => {
         try {
@@ -19,14 +21,25 @@ function asyncHandler(cb){
 
 router.get('/', asyncHandler(async (req, res) => {
     const bookList = await Book.findAll();
-    console.log(JSON.stringify(bookList, null, 2));
+    /* console.log(JSON.stringify(bookList, null, 2)); */
     //The use of .render() method ensures that the `index.pug` template is rendered when user visits the root directory.
     res.render('index', {bookList});
 }));
 
-router.get('/library', (req, res) => {
-    res.send('<strong>Testing a separate route.</strong>');
+router.get('/new', (req, res) => {
+    res.render('newBook', { book: {}, title: 'Test'});
 });
+
+router.post('/', asyncHandler(async (req, res) => {
+    console.log(req.body);
+    let book;
+    try {
+        book = await Book.create(req.body);
+        res.redirect('/');
+    } catch (error) {
+        throw error;
+    }
+}));
 
 //Ensures that all routes written in this folder can be used in the root's `app.js` file.
 module.exports = router;

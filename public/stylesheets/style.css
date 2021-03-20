@@ -3,6 +3,18 @@ h1 {
     font-size: 24px;
 }
 
+h2 {
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+h3 {
+    font-style: italic;
+    font-size: 16px;
+    font-family:'Courier New', Courier, monospace;
+    color: blueviolet;
+}
+
 p {
     color: lightseagreen;
     font-size: 14px;

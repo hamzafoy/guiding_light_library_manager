@@ -1,5 +1,7 @@
 // Requiring Express to enable access to the framework's methods, properties, & other tools.
 const express = require('express');
+// REquiring body-parser.
+const bodyParser = require('body-parser')
 // Requiring Sequelize to enable access to the ORM's methods, properties, & other tools.
 const Sequelize = require('sequelize');
 // `application` is the variable that can be manipulated using Express.js' methods & properties.
@@ -12,6 +14,8 @@ const { Book } = db.models;
 
 // This allows for HTML template rendering using the Pug rendering engine.
 application.set('view engine', 'pug');
+
+application.use(bodyParser.urlencoded({ extended: false }))
 
 //This is a method giving `app.js` to the routes written in the `routes` directory.
 application.use(mainRoutes);
