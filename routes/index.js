@@ -6,8 +6,6 @@ const router = express.Router();
 const db = require('../db');
 const { Book } = db.models;
 
-const bodyParser = require('body-parser')
-
 function asyncHandler(cb){
     return async(req, res, next) => {
         try {
@@ -40,6 +38,15 @@ router.post('/', asyncHandler(async (req, res) => {
         throw error;
     }
 }));
+
+router.get("/:id", asyncHandler(async (req, res) => {
+    const book = await Book.findByPk(req.params.id);
+    if(book) {
+      res.render("bookViewing", { book, title: book.title });  
+    } else {
+      res.sendStatus(404);
+    }
+  })); 
 
 //Ensures that all routes written in this folder can be used in the root's `app.js` file.
 module.exports = router;
