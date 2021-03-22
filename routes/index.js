@@ -19,7 +19,6 @@ function asyncHandler(cb){
 
 router.get('/', asyncHandler(async (req, res) => {
     const bookList = await Book.findAll();
-    /* console.log(JSON.stringify(bookList, null, 2)); */
     //The use of .render() method ensures that the `index.pug` template is rendered when user visits the root directory.
     res.render('index', {bookList});
 }));
