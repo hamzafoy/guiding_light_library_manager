@@ -75,13 +75,6 @@ application.listen(3000, () => {
                 language: 'English'
             })
         ]);
-        
-        /* This is a single book entry CREATE'd & stored in the database.
-            await Book.create({
-                title: 'Towards Sacred Activism',
-                author: 'Imam Dawud Walid',
-                genre: 'Political Essay',
-        }); */
 
     } catch (error) {
         console.error('Unfortunately, the airlock is not air tight and our connection to the database has failed', error);

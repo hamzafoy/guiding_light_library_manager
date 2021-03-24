@@ -46,6 +46,7 @@ router.post('/', asyncHandler(async (req, res) => {
     let book;
     try {
         book = await Book.create(req.body);
+        console.log(book);
         res.redirect('/');
     } catch (error) {
         throw error;

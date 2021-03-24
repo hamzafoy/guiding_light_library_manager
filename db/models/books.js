@@ -12,18 +12,26 @@ module.exports = (sequelize) => {
         title: {
             type: Sequelize.STRING(1000),
             allowNull: false,
+            validate: {
+                notEmpty: {
+                    msg: 'You must provide a value for the title!',
+                }
+            }
         },
         author: {
             type: Sequelize.STRING(200),
             allowNull: false,
+            notEmpty: true
         },
         genre: {
             type: Sequelize.STRING(200),
             allowNull: false,
+            notEmpty: true
         },
         language: {
             type: Sequelize.STRING(100),
             allowNull: false,
+            notEmpty: true
         }
     }, {sequelize});
 
