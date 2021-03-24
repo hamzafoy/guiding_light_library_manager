@@ -8,6 +8,7 @@ const { Book } = db.models;
 
 
 
+//This is a convenient function that handles async/await.
 function asyncHandler(cb){
     return async(req, res, next) => {
         try {
