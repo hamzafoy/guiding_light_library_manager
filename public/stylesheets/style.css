@@ -1,18 +1,32 @@
 h1 {
-    color: red;
-    font-size: 24px;
+    color: #55b3b1;
+    font-size: 28px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h2 {
+    color: #af0069;
     text-decoration: underline;
     font-size: 20px;
 }
 
-h3 {
-    font-style: italic;
-    font-size: 12px;
+span, h3 {
+    font-size: 16px;
     font-family:'Courier New', Courier, monospace;
-    color: blueviolet;
+    color: #09015f;
+}
+
+a {
+    color: #af0069;
+    font-size: 12px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a:hover {
+    color: cornflowerblue;
+    background-color: #e7f5fe;
+    transition: background-color 4s;
+    transition: color 2s;
 }
 
 p {
