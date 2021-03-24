@@ -1,13 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 h1 {
     color: #55b3b1;
     font-size: 28px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
 }
 
 h2 {
     color: #af0069;
     text-decoration: underline;
     font-size: 20px;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
 }
 
 span, h3 {
@@ -32,4 +43,20 @@ a:hover {
 p {
     color: lightseagreen;
     font-size: 14px;
+}
+
+#app {
+    background-color: #fcfce4;
+}
+
+#container {
+    background-color: #fff5f1;
+    margin: 0 25%;
+    text-align: left;
+}
+
+#bookViewing {
+    background-color: #f3fbfa;
+    margin: 0 25%;
+    text-align: center;
 }

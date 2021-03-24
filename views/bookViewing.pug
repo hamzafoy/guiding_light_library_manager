@@ -4,12 +4,14 @@ html(lang="en")
     title=book.title
     link(rel='stylesheet', href='/static/stylesheets/style.css')
   body
-    h1 Book Title:
-        h3=book.title
-    h1 Book's Author:
-        h3=book.author
-    h1 Genre:
-        h3=book.genre
-    h1 Written in:
-        h3=book.language
-    a(href="../") &larr; Back 
+    div#app
+      div#bookViewing
+        h1 Book Title:
+            h3=book.title
+        h1 Book's Author:
+            h3=book.author
+        h1 Genre:
+            h3=book.genre
+        h1 Written in:
+            h3=book.language
+        a(href="../") &larr; Back 
