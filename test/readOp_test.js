@@ -1,21 +1,42 @@
 let chai = require('chai');
 let chaiHTTP = require('chai-http');
+let chaiPromised = require('chai-as-promised');
 let application = require('../app');
 let expect = require('chai').expect;
+const { assert } = require('chai');
+const db = require('../db');
+const { Book } = db.models;
+let router = require('../routes');
 chai.use(chaiHTTP);
+chai.use(chaiPromised);
 chai.should();
 
 // Unit Test Suite
 describe('Unit Tests for Endpoints to meet Code Louisville Project Requirements', () => {
     //Test Spec for READ ALL operation
-    it('should pull data from all rows in the database', (done) => {
+    before(function(done) {
+        this.timeout(6000);
+        setTimeout(done, 5000); //wait for database to initialize
+      });
+
+      it('should pull data from all rows in the database', async() => {
+        let books = await Book.findAll();
+        expect(books).to.be.an('array')
+        expect(books.length).to.equal(6)
+        console.log(books[0].dataValues);
+        expect(books[0].dataValues).to.have.property('genre');
+
+    }); 
+
+    /* it('should pull data from all rows in the database', (done) => {
         chai.request(application)
             .get('/')
             .end((err, res) => {
                 res.body.should.be.a('object');
                 done();
             })
-    });
+    }); */
+    
     //Test Spec for READ-by-id operation
     it('should pull data from the below id', (done) => {
         const id = 2;
