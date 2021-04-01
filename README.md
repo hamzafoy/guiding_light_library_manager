@@ -46,6 +46,8 @@
 
 ### General Information about the Application
 
+![Work in Progress](/public/img/wip.svg)
+
 *This application is intended for the use of Guiding Light Islamic Center, a local mosque and community center in Louisville, Kentucky.  The intended use is as a tool to help maintain & manage the large library of books kept at the center's library. This is also a capstone project for the Code Louisville Fullstack JavaScript course in early 2021.*
 
 This application's backend is programmed with the **Express.js** framework whose routes use the **Sequelize** *ORM* to communicate with a **SQLite3** database. **Pug** is the HTML template engine of choice to create the front-end that users can communicate with to *READ* a list of book records, *READ* a specific book's data based on `id`, & *CREATE* a book record to add to what will be a vast list of books kept at Guiding Light Islamic Center.
