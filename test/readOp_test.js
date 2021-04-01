@@ -48,7 +48,8 @@ describe('Unit Tests for Endpoints to meet Code Louisville Project Requirements'
                 bookList.forEach((book) => {
                     expect(book).to.be.an('object')
                     let entry = book.dataValues;
-                    
+                    console.log(res.text)
+                    expect(res.text).to.include(entry.title);
                     expect(entry).to.include.all.keys('id', 'title', 'author')
                 })
                 done();
