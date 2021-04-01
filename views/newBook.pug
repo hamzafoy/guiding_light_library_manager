@@ -4,8 +4,9 @@ html(lang="en")
     title Guiding Light Islamic Center Library
     link(rel='stylesheet', href='/static/stylesheets/style.css')
   body
-    h1 Guiding Light Islamic Center Library
-    h2 Submit a new book to our Library! 
+    div#container
+      h1#indexTitle Guiding Light Islamic Center Library
+      h2#indexSubtitle Submit a new book to our Library! 
 
-  form(action="/", method="post")
-    include form
+      form(action="/", method="post")
+        include form

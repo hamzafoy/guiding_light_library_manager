@@ -4,17 +4,15 @@ html(lang="en")
     title Guiding Light Islamic Center Library
     link(rel='stylesheet', href='/static/stylesheets/style.css')
   body
-    div#app
-      div#container
-        h1 Guiding Light Islamic Center Library
-        h2 Our Book Selection
-        
-        each book in bookList
-          book
-            p
-              span= book.title
-              | 
-              a(href=`/${book.id}`) Learn More
+    div#container
+      h1#indexTitle Guiding Light Islamic Center Library
+      h2#indexSubtitle Our Book Selection
+      
+      each book in bookList
+        book
+          p
+            span= book.title
+            | 
+            a(href=`/${book.id}`) Learn More
 
-        p This library is open to all in our local Louisville Muslim community!
-        a(href="/new") Add New Book
+      a(href="/new")#addBook Add New Book

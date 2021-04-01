@@ -19,23 +19,41 @@ describe('Unit Tests for Endpoints to meet Code Louisville Project Requirements'
         setTimeout(done, 5000); //wait for database to initialize
       });
 
-      it('should pull data from all rows in the database', async() => {
+      /* it('should pull data from all rows in the database', async() => {
         let books = await Book.findAll();
         expect(books).to.be.an('array')
         expect(books.length).to.equal(6)
         console.log(books[0].dataValues);
         expect(books[0].dataValues).to.have.property('genre');
 
-    }); 
+    }); */ 
 
     /* it('should pull data from all rows in the database', (done) => {
         chai.request(application)
             .get('/')
             .end((err, res) => {
-                res.body.should.be.a('object');
+                expect(res.text).to.include('Towards Sacred Activism')
+                expect(res.text).to.include('Being Muslim: A Practical Guide')
+                expect(res.text).to.include('Ser Musulmana: Una Guia Practica')
                 done();
             })
     }); */
+
+    it('should pull data from all rows in the database', (done) => {
+        chai.request(application)
+            .get('/')
+            .end(async(err, res) => {
+                let bookList = await Book.findAll();
+                expect(bookList).to.be.an('array')
+                bookList.forEach((book) => {
+                    expect(book).to.be.an('object')
+                    let entry = book.dataValues;
+                    
+                    expect(entry).to.include.all.keys('id', 'title', 'author')
+                })
+                done();
+            })
+    });
     
     //Test Spec for READ-by-id operation
     it('should pull data from the below id', (done) => {

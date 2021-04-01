@@ -1,10 +1,16 @@
 body {
     margin: 0;
     padding: 0;
+    background-image: url("../img/islamicArt_9.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+@font-face {font-family: "BioRhyme-Light"; src: url("../fonts/BioRhyme-Light.ttf"); }
+@font-face {font-family: "RedRose-Light"; src: url("../fonts/RedRose-Light.ttf"); }
+
 h1 {
-    color: #55b3b1;
     font-size: 28px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
@@ -19,18 +25,33 @@ h2 {
 
 h3 {
     text-align: center;
-}
-
-span, h3 {
-    font-size: 16px;
-    font-family:'Courier New', Courier, monospace;
-    color: #09015f;
+    font-family: RedRose-Light;
+    color: #f0f0f0;
 }
 
 a {
     color: #af0069;
     font-size: 12px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#addBook {
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: block;
+    text-align: center;
+    border: 2px #df99c3 solid;
+    margin: 0 25%;
+    color: white;
+    background-color: #af0069;
+}
+
+#addBook:hover {
+    color: white;
+    background-color: #df99c3;
+    border: 2px #af0069 solid;
+    transition: background-color 2s;
+    transition: border 2s;
 }
 
 a:hover {
@@ -41,22 +62,40 @@ a:hover {
 }
 
 p {
-    color: lightseagreen;
     font-size: 14px;
 }
 
-#app {
-    background-color: #fcfce4;
+
+#indexTitle {
+    font-family: BioRhyme-Light;
+    color: #ffffff;
+}
+
+#indexSubtitle {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+    color: #f0f0f0;
+}
+
+span {
+    font-family: BioRhyme-Light;
+    color: #ffffff;
 }
 
 #container {
-    background-color: #fff5f1;
     margin: 0 25%;
     text-align: left;
+    background-color: rgba(160,193,184, 0.95);
+    border: 2px #709fb0 solid;
+    outline: 1px green solid;
 }
 
 #bookViewing {
     background-color: #f3fbfa;
     margin: 0 25%;
+    text-align: center;
+}
+
+form {
     text-align: center;
 }

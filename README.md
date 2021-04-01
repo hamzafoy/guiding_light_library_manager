@@ -1,4 +1,4 @@
-This readme will contain:
+This readme contains:
 
 1. **Purpose Statement**
 
