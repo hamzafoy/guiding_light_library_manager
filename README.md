@@ -46,7 +46,7 @@
 
 ### General Information about the Application
 
-![Work in Progress](/public/img/wip.svg)
+![Work in Progress](/public/img/wip.svg) ![Node.js](/public/img/node.svg) ![Mocha](/public/img/mocha.svg)
 
 *This application is intended for the use of Guiding Light Islamic Center, a local mosque and community center in Louisville, Kentucky.  The intended use is as a tool to help maintain & manage the large library of books kept at the center's library. This is also a capstone project for the Code Louisville Fullstack JavaScript course in early 2021.*
 
