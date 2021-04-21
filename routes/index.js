@@ -46,7 +46,6 @@ router.post('/', asyncHandler(async (req, res) => {
     let book;
     try {
         book = await Book.create(req.body);
-        console.log(book);
         res.redirect('/');
     } catch (error) {
         throw error;
@@ -64,7 +63,17 @@ router.get("/:id", asyncHandler(async (req, res) => {
     } else {
       res.sendStatus(404);
     }
-  })); 
+  }));
+
+
+
+  //This route handles deleting a book entry, you must visit the book's specific entry in the app to access deletion.
+router.get("/:id/delete", async(req, res) => {
+    console.log('Test successful!');
+    const bookSelectedForDeletion = await Book.findByPk(req.params.id);
+    await bookSelectedForDeletion.destroy();
+    res.redirect('/');
+});
 
 
 
