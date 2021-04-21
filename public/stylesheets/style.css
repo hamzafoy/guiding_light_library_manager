@@ -40,7 +40,7 @@ a {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: block;
     text-align: center;
-    border: 2px #df99c3 solid;
+    border: 3px #df99c3 solid;
     margin: 0 25%;
     color: white;
     background-color: #af0069;
@@ -49,7 +49,26 @@ a {
 #addBook:hover {
     color: white;
     background-color: #df99c3;
-    border: 2px #af0069 solid;
+    border: 3px #af0069 solid;
+    transition: background-color 2s;
+    transition: border 2s;
+}
+
+#deleteBook {
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: block;
+    text-align: center;
+    border: 3px #87ceeb solid;
+    margin: 0 25%;
+    color: white;
+    background-color: #436775;
+}
+
+#deleteBook:hover {
+    color: white;
+    background-color: #87ceeb;
+    border: 3px #436775 solid;
     transition: background-color 2s;
     transition: border 2s;
 }
