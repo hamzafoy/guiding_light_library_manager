@@ -1,7 +1,9 @@
 // Requiring Express to enable access to the framework's methods, properties, & other tools.
 const express = require('express');
-// REquiring body-parser.
+// Requiring body-parser.
 const bodyParser = require('body-parser')
+// Requiring method-override to allow the use of PUT method in the Pug template form.
+const methodOverride = require('method-override');
 // Requiring Sequelize to enable access to the ORM's methods, properties, & other tools.
 const Sequelize = require('sequelize');
 // `application` is the variable that can be manipulated using Express.js' methods & properties.
@@ -16,6 +18,7 @@ const { Book } = db.models;
 application.set('view engine', 'pug');
 
 application.use(bodyParser.urlencoded({ extended: false }))
+application.use(methodOverride('_method'))
 
 //This is a method giving `app.js` to the routes written in the `routes` directory.
 application.use(mainRoutes);
