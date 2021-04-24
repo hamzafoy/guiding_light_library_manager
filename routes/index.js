@@ -66,6 +66,22 @@ router.get("/:id", asyncHandler(async (req, res) => {
 
 
 
+//UPDATE OPERATIONS
+//This route handles selecting which book you want to edit.
+router.get("/:id/update", asyncHandler(async (req, res) => {
+    const book = await Book.findByPk(req.params.id);
+    res.render('updateBook', { book });
+}));
+
+//This route handles updating the database row with the new form data upon editing.
+router.post("/:id/update", asyncHandler(async (req, res) => {
+    const book = await Book.findByPk(req.params.id);
+    await book.update(req.body);
+    res.redirect(`/${book.id}`);
+}));
+
+
+
 //DELETE OPERATION
 //This route handles deleting a book entry, you must visit the book's specific entry in the app to access deletion.
 router.get("/:id/delete", asyncHandler( async(req, res) => {

@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+  head
+    title Guiding Light Islamic Center Library
+    link(rel='stylesheet', href='/static/stylesheets/style.css')
+  body
+    div#container
+      h1#indexTitle Guiding Light Islamic Center Library
+      h2#indexSubtitle Update this book entry!
+
+      form(action="/" + book.id + "/update", method="post")
+        include form
