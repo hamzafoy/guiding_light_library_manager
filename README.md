@@ -54,7 +54,7 @@ This application's backend is programmed with the **Express.js** framework whose
 
 > **Room for Improvement**
 > * Will need to move the database's seed data out of `app.js`.
-> * Create **UPDATE** & **DELETE** routes.
+> * Create **UPDATE** & **DELETE** routes. &radic;
 > * Explore the possibility for *pagination* of the book-records for front-end viewing.
 > * Explore hosting options.
 > * Explore user authorization/authentication.
